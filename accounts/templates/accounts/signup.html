@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<!-- Enlace a Bootstrap (puedes omitirlo si ya está en tu archivo base) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <h2 class="text-center mb-4">Registro de Usuario</h2>
+            <form method="post" class="border p-4 rounded shadow">
+                {% csrf_token %}
+                <!-- Renderizar campos del formulario -->
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="text-danger small mt-1">
+                        {{ field.errors|striptags }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <!-- Botón de registro -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary w-100">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<!-- Enlace a Bootstrap (puedes omitirlo si ya está en tu archivo base) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Actualizar Información</h2>
+
+            <!-- Formulario -->
+            <form method="post" class="shadow-sm p-4 bg-light rounded">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                </div>
+            </form>
+
+            <!-- Acciones adicionales -->
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'user_detail' user.id %}" class="btn btn-primary">Volver</a>
+                <a href="{% url 'user_delete' user.id %}" class="btn btn-danger">Eliminar Cuenta</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

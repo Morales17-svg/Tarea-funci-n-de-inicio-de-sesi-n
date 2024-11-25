@@ -1,0 +1,50 @@
+# Ignorar archivos de entorno
+.env
+*.env
+
+# Archivos de compilación de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Archivos de configuración del IDE
+.vscode/
+.idea/
+
+# Archivos y carpetas del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Carpeta de dependencias de virtualenv
+env/
+venv/
+ENV/
+*.egg-info/
+
+# Ignorar módulos de Python instalados
+*.egg
+*.dist-info/
+*.pyc
+
+# Archivos de bases de datos locales
+db.sqlite3
+
+# Archivos de logs
+*.log
+
+# Archivos de migraciones de Django
+migrations/
+
+# Archivos de prueba
+test_*.py
+
+# Archivos innecesarios de Bootstrap si se descargan o se usan localmente
+node_modules/
+bower_components/
+
+# Si usas Bootstrap descargado:
+# Ignorar la carpeta "dist" y "fonts" de Bootstrap, que contienen archivos compilados y fuentes
+dist/
+fonts/

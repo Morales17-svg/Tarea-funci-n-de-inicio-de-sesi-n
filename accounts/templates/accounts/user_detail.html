@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<!-- Enlace a Bootstrap (puedes omitirlo si ya está en tu archivo base) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Perfil del Usuario</h2>
+
+            <!-- Tabla de detalles del usuario -->
+            <table class="table table-striped table-hover shadow-sm">
+                <tbody>
+                    <tr>
+                        <th class="bg-light">Nombre de usuario</th>
+                        <td>{{ user.username }}</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Correo electrónico</th>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Edad</th>
+                        <td>{{ user.age }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Opciones de acciones -->
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'user_edit' user.pk %}" class="btn btn-primary">Editar Perfil</a>
+                <a href="{% url 'password_change' %}" class="btn btn-warning">Cambiar Contraseña</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
