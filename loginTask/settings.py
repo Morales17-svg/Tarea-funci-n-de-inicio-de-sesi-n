@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'loginTask.wsgi.application'
+WSGI_APPLICATION = 'loginTask.wsgi.app'
 
 
 # Database
